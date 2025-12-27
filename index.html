@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Accounts | Купить аккаунты</title>
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-text h1 {
+            color: var(--dark);
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Reviews */
+        .reviews-badge {
+            background: linear-gradient(135deg, var(--success), #34d399);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Auth */
+        .auth-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: var(--light);
+            border-radius: 10px;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .user-role {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, var(--danger), #f87171);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--success), #34d399);
+            color: white;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Categories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .category-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* Accounts */
+        .accounts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .account-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .account-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
+        }
+
+        .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .account-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .flag {
+            font-size: 24px;
+        }
+
+        .account-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .account-type {
+            font-size: 12px;
+            padding: 4px 10px;
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .account-price {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .modal-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray);
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--danger);
+        }
+
+        /* Payment */
+        .payment-details {
+            background: linear-gradient(135deg, #f0f4ff, #f8f0ff);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .payment-amount {
+            font-size: 42px;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 15px 0;
+        }
+
+        .payment-info {
+            text-align: center;
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .bank-details {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: center;
+            border: 2px dashed var(--primary);
+        }
+
+        .phone-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 10px 0;
+        }
+
+        /* File Upload */
+        .upload-container {
+            margin: 25px 0;
+        }
+
+        .upload-area {
+            border: 3px dashed var(--primary);
+            border-radius: 15px;
+            padding: 50px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .upload-area:hover {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--secondary);
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .admin-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .admin-badge {
+            background: linear-gradient(135deg, var(--danger), #f87171);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .price-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .price-control {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Receipts */
+        .receipts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .receipt-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid var(--warning);
+        }
+
+        .receipt-card.approved {
+            border-left-color: var(--success);
+        }
+
+        .receipt-card.rejected {
+            border-left-color: var(--danger);
+        }
+
+        .receipt-info {
+            flex: 1;
+        }
+
+        .receipt-user {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .receipt-details {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .receipt-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Support */
+        .support-box {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 30px;
+            border: 2px solid #fbbf24;
+        }
+
+        .support-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .support-contact {
+            font-size: 24px;
+            font-weight: 700;
+            color: #92400e;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .auth-section {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                padding: 25px;
+            }
+            
+            .payment-amount {
+                font-size: 32px;
+            }
+            
+            .phone-number {
+                font-size: 22px;
+            }
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            z-index: 1001;
+            animation: slideIn 0.3s ease;
+            display: none;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, var(--success), #34d399);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, var(--danger), #f87171);
+        }
+
+        .notification.warning {
+            background: linear-gradient(135deg, var(--warning), #fbbf24);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-top">
+                <div class="logo">
+                    <div class="logo-icon">TG</div>
+                    <div class="logo-text">
+                        <h1>Telegram Accounts</h1>
+                        <p>Покупка аккаунтов Telegram</p>
+                    </div>
+                </div>
+                
+                <div class="reviews-badge">
+                    <span>⭐</span>
+                    100+ положительных отзывов
+                </div>
+                
+                <div class="auth-section" id="authSection">
+                    <div class="auth-buttons" id="authButtons">
+                        <button class="btn btn-primary" onclick="showLogin()">
+                            <span>🔐</span> Войти
+                        </button>
+                        <button class="btn btn-success" onclick="showRegister()">
+                            <span>📝</span> Регистрация
+                        </button>
+                    </div>
+                    <div class="user-info" id="userInfo" style="display: none;">
+                        <div class="user-avatar" id="userAvatar">U</div>
+                        <div class="user-details">
+                            <span class="user-name" id="userName"></span>
+                            <span class="user-role" id="userRole"></span>
+                        </div>
+                        <button class="btn btn-danger" onclick="logout()">
+                            <span>🚪</span> Выйти
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalSales">0</div>
+                    <div class="stat-label">Продано аккаунтов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalRevenue">0₽</div>
+                    <div class="stat-label">Общая выручка</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="pendingReceipts">0</div>
+                    <div class="stat-label">Ожидают проверки</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Гарантия качества</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Categories -->
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">👤</div>
+                    <div class="category-title">ФИЗ аккаунты</div>
+                </div>
+                <div class="accounts-list">
+                    <div class="account-card">
+                        <div class="account-header">
+                            <div class="account-info">
+                                <div class="flag">🇺🇸</div>
+                                <div>
+                                    <div class="account-name">США</div>
+                                    <div class="account-type">ФИЗ</div>
+                                </div>
+                            </div>
+                            <div class="account-price" id="price-usa">30₽</div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="buyAccount('USA', 'ФИЗ', 30)">
+                            <span>🛒</span> Купить
+                        </button>
+                    </div>
+
+                    <div class="account-card">
+                        <div class="account-header">
+                            <div class="account-info">
+                                <div class="flag">🇮🇳</div>
+                                <div>
+                                    <div class="account-name">Индия</div>
+                                    <div class="account-type">ФИЗ</div>
+                                </div>
+                            </div>
+                            <div class="account-price" id="price-india">15₽</div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="buyAccount('Индия', 'ФИЗ', 15)">
+                            <span>🛒</span> Купить
+                        </button>
+                    </div>
+
+                    <div class="account-card">
+                        <div class="account-header">
+                            <div class="account-info">
+                                <div class="flag">🇷🇺</div>
+                                <div>
+                                    <div class="account-name">Россия</div>
+                                    <div class="account-type">ФИЗ</div>
+                                </div>
+                            </div>
+                            <div class="account-price" id="price-russia">199₽</div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="buyAccount('Россия', 'ФИЗ', 199)">
+                            <span>🛒</span> Купить
+                        </button>
+                    </div>
+
+                    <div class="account-card">
+                        <div class="account-header">
+                            <div class="account-info">
+                                <div class="flag">🇰🇿</div>
+                                <div>
+                                    <div class="account-name">Казахстан</div>
+                                    <div class="account-type">ФИЗ</div>
+                                </div>
+                            </div>
+                            <div class="account-price" id="price-kazakhstan">199₽</div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="buyAccount('Казахстан', 'ФИЗ', 199)">
+                            <span>🛒</span> Купить
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🛡️</div>
+                    <div class="category-title">Аккаунты с отлегой</div>
+                </div>
+                <div class="accounts-list">
+                    <div class="account-card">
+                        <div class="account-header">
+                            <div class="account-info">
+                                <div class="flag">🇺🇸</div>
+                                <div>
+                                    <div class="account-name">США</div>
+                                    <div class="account-type">ОТЛЕГА</div>
+                                </div>
+                            </div>
+                            <div class="account-price" id="price-usa-ot">50₽</div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="buyAccount('США', 'ОТЛЕГА', 50)">
+                            <span>🛒</span> Купить
+                        </button>
+                    </div>
+
+                    <div class="account-card">
+                        <div class="account-header">
+                            <div class="account-info">
+                                <div class="flag">🇮🇳</div>
+                                <div>
+                                    <div class="account-name">Индия</div>
+                                    <div class="account-type">ОТЛЕГА</div>
+                                </div>
+                            </div>
+                            <div class="account-price" id="price-india-ot">25₽</div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="buyAccount('Индия', 'ОТЛЕГА', 25)">
+                            <span>🛒</span> Купить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Box -->
+        <div class="support-box">
+            <div class="support-title">📞 Техническая поддержка</div>
+            <div class="support-contact">@neverblya</div>
+            <p style="margin-top: 10px; color: #92400e;">Ответим на все вопросы в Telegram</p>
+        </div>
+
+        <!-- Admin Panel -->
+        <div id="adminPanel" class="admin-panel">
+            <div class="admin-header">
+                <h2 style="font-size: 28px; color: var(--dark);">Панель администратора</h2>
+                <div class="admin-badge">ADMIN</div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('prices')">💰 Управление ценами</button>
+                <button class="tab-btn" onclick="switchTab('receipts')">📄 Проверка чеков</button>
+                <button class="tab-btn" onclick="switchTab('statistics')">📊 Статистика</button>
+                <button class="tab-btn" onclick="switchTab('users')">👥 Пользователи</button>
+            </div>
+
+            <!-- Prices Tab -->
+            <div id="tab-prices" class="tab-content active">
+                <h3 style="margin-bottom: 25px; color: var(--dark);">Настройка цен</h3>
+                <div class="price-controls">
+                    <div class="price-control">
+                        <div class="input-group">
+                            <label>🇺🇸 США (ФИЗ):</label>
+                            <input type="number" class="form-input" id="admin-price-usa" value="30" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="updatePrice('usa', document.getElementById('admin-price-usa').value)">
+                            Обновить
+                        </button>
+                    </div>
+
+                    <div class="price-control">
+                        <div class="input-group">
+                            <label>🇮🇳 Индия (ФИЗ):</label>
+                            <input type="number" class="form-input" id="admin-price-india" value="15" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="updatePrice('india', document.getElementById('admin-price-india').value)">
+                            Обновить
+                        </button>
+                    </div>
+
+                    <div class="price-control">
+                        <div class="input-group">
+                            <label>🇷🇺 Россия (ФИЗ):</label>
+                            <input type="number" class="form-input" id="admin-price-russia" value="199" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="updatePrice('russia', document.getElementById('admin-price-russia').value)">
+                            Обновить
+                        </button>
+                    </div>
+
+                    <div class="price-control">
+                        <div class="input-group">
+                            <label>🇰🇿 Казахстан (ФИЗ):</label>
+                            <input type="number" class="form-input" id="admin-price-kazakhstan" value="199" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="updatePrice('kazakhstan', document.getElementById('admin-price-kazakhstan').value)">
+                            Обновить
+                        </button>
+                    </div>
+
+                    <div class="price-control">
+                        <div class="input-group">
+                            <label>🇺🇸 США (ОТЛЕГА):</label>
+                            <input type="number" class="form-input" id="admin-price-usa-ot" value="50" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="updatePrice('usa-ot', document.getElementById('admin-price-usa-ot').value)">
+                            Обновить
+                        </button>
+                    </div>
+
+                    <div class="price-control">
+                        <div class="input-group">
+                            <label>🇮🇳 Индия (ОТЛЕГА):</label>
+                            <input type="number" class="form-input" id="admin-price-india-ot" value="25" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="updatePrice('india-ot', document.getElementById('admin-price-india-ot').value)">
+                            Обновить
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Receipts Tab -->
+            <div id="tab-receipts" class="tab-content">
+                <h3 style="margin-bottom: 25px; color: var(--dark);">Чеки на проверку</h3>
+                <div class="receipts-list" id="receiptsList">
+                    <!-- Receipts will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Statistics Tab -->
+            <div id="tab-statistics" class="tab-content">
+                <h3 style="margin-bottom: 25px; color: var(--dark);">Статистика продаж</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="admin-total-sales">0</div>
+                        <div class="stat-label">Всего продаж</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="admin-today-sales">0</div>
+                        <div class="stat-label">Продаж сегодня</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="admin-total-revenue">0₽</div>
+                        <div class="stat-label">Общая выручка</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="admin-avg-order">0₽</div>
+                        <div class="stat-label">Средний чек</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div id="tab-users" class="tab-content">
+                <h3 style="margin-bottom: 25px; color: var(--dark);">Пользователи системы</h3>
+                <div class="receipts-list" id="usersList">
+                    <!-- Users will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <div class="modal-header">
+                    <div class="modal-icon">💳</div>
+                    <div class="modal-title">Оплата заказа</div>
+                </div>
+                
+                <div class="payment-details">
+                    <div class="payment-info">Сумма к оплате:</div>
+                    <div class="payment-amount" id="paymentAmount">0₽</div>
+                    <div class="payment-info">Переведите средства на:</div>
+                    
+                    <div class="bank-details">
+                        <div>Банк: <strong>ЮМАНИ</strong></div>
+                        <div class="phone-number">+79818376180</div>
+                        <div>Получатель: Система оплаты</div>
+                    </div>
+                </div>
+
+                <div class="upload-container">
+                    <div class="payment-info">Загрузите скриншот чека:</div>
+                    <div class="upload-area" id="uploadArea" onclick="document.getElementById('receiptInput').click()">
+                        <div class="upload-icon">📎</div>
+                        <div style="font-size: 18px; color: var(--dark); margin-bottom: 10px;">Нажмите для загрузки</div>
+                        <div style="color: var(--gray); font-size: 14px;">Поддерживаемые форматы: JPG, PNG, PDF</div>
+                    </div>
+                    <input type="file" id="receiptInput" accept="image/*,.pdf" style="display:none" onchange="uploadReceipt(event)">
+                    <div id="uploadedFile" style="display:none; margin-top: 15px;"></div>
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 18px;" 
+                        onclick="submitPayment()" id="submitPaymentBtn" disabled>
+                    <span>✅</span> Подтвердить оплату
+                </button>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <div class="modal-header">
+                    <div class="modal-icon">🔐</div>
+                    <div class="modal-title">Вход в систему</div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Логин:</label>
+                    <input type="text" class="form-input" id="loginUsername" placeholder="Введите логин">
+                </div>
+                
+                <div class="input-group">
+                    <label>Пароль:</label>
+                    <input type="password" class="form-input" id="loginPassword" placeholder="Введите пароль">
+                </div>
+                
+                <button class="btn btn-primary" style="width: 100%; padding: 18px; margin-top: 20px;" onclick="performLogin()">
+                    <span>🚪</span> Войти
+                </button>
+            </div>
+        </div>
+
+        <!-- Register Modal -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <div class="modal-header">
+                    <div class="modal-icon">📝</div>
+                    <div class="modal-title">Регистрация</div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Логин:</label>
+                    <input type="text" class="form-input" id="registerUsername" placeholder="Придумайте логин">
+                </div>
+                
+                <div class="input-group">
+                    <label>Пароль:</label>
+                    <input type="password" class="form-input" id="registerPassword" placeholder="Придумайте пароль">
+                </div>
+                
+                <div class="input-group">
+                    <label>Подтверждение пароля:</label>
+                    <input type="password" class="form-input" id="registerConfirm" placeholder="Повторите пароль">
+                </div>
+                
+                <button class="btn btn-success" style="width: 100%; padding: 18px; margin-top: 20px;" onclick="performRegister()">
+                    <span>✅</span> Зарегистрироваться
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script>
+        // Инициализация данных
+        let users = JSON.parse(localStorage.getItem('users') || '[]');
+        let currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+        let receipts = JSON.parse(localStorage.getItem('receipts') || '[]');
+        let currentPurchase = null;
+        let statistics = JSON.parse(localStorage.getItem('statistics') || '{"totalSales": 0, "totalRevenue": 0, "todaySales": 0}');
+
+        // Инициализация админа
+        function initAdmin() {
+            if (!users.find(u => u.username === 'admin')) {
+                users.push({
+                    username: 'admin',
+                    password: 'admin123',
+                    email: 'admin@system.com',
+                    role: 'admin',
+                    createdAt: new Date().toISOString()
+                });
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+        }
+
+        // Инициализация цен
+        function initPrices() {
+            const prices = JSON.parse(localStorage.getItem('prices') || '{}');
+            const defaultPrices = {
+                'usa': 30,
+                'india': 15,
+                'russia': 199,
+                'kazakhstan': 199,
+                'usa-ot': 50,
+                'india-ot': 25
+            };
+
+            Object.keys(defaultPrices).forEach(key => {
+                if (!prices[key]) {
+                    prices[key] = defaultPrices[key];
+                }
+            });
+
+            localStorage.setItem('prices', JSON.stringify(prices));
+            updatePriceDisplay();
+        }
+
+        // Обновление отображения цен
+        function updatePriceDisplay() {
+            const prices = JSON.parse(localStorage.getItem('prices') || '{}');
+            
+            document.getElementById('price-usa').textContent = prices.usa + '₽';
+            document.getElementById('price-india').textContent = prices.india + '₽';
+            document.getElementById('price-russia').textContent = prices.russia + '₽';
+            document.getElementById('price-kazakhstan').textContent = prices.kazakhstan + '₽';
+            document.getElementById('price-usa-ot').textContent = prices['usa-ot'] + '₽';
+            document.getElementById('price-india-ot').textContent = prices['india-ot'] + '₽';
+        }
+
+        // Обновление статистики
+        function updateStatistics() {
+            const approvedReceipts = receipts.filter(r => r.status === 'approved');
+            const today = new Date().toDateString();
+            const todayReceipts = approvedReceipts.filter(r => new Date(r.date).toDateString() === today);
+            
+            statistics.totalSales = approvedReceipts.length;
+            statistics.totalRevenue = approvedReceipts.reduce((sum, r) => sum + parseInt(r.price), 0);
+            statistics.todaySales = todayReceipts.length;
+            
+            localStorage.setItem('statistics', JSON.stringify(statistics));
+            
+            // Обновление отображения
+            document.getElementById('totalSales').textContent = statistics.totalSales;
+            document.getElementById('totalRevenue').textContent = statistics.totalRevenue + '₽';
+            document.getElementById('pendingReceipts').textContent = receipts.filter(r => r.status === 'pending').length;
+            
+            // Для админки
+            document.getElementById('admin-total-sales').textContent = statistics.totalSales;
+            document.getElementById('admin-today-sales').textContent = statistics.todaySales;
+            document.getElementById('admin-total-revenue').textContent = statistics.totalRevenue + '₽';
+            document.getElementById('admin-avg-order').textContent = 
+                statistics.totalSales > 0 ? Math.round(statistics.totalRevenue / statistics.totalSales) + '₽' : '0₽';
+        }
+
+        // Уведомления
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Загрузка при запуске
+        window.onload = function() {
+            initAdmin();
+            initPrices();
+            updateStatistics();
+            
+            if (currentUser) {
+                showUserMenu();
+                if (currentUser.role === 'admin') {
+                    document.getElementById('adminPanel').style.display = 'block';
+                    loadReceipts();
+                    loadUsers();
+                }
+            }
+        };
+
+        // Показать меню пользователя
+        function showUserMenu() {
+            document.getElementById('authButtons').style.display = 'none';
+            document.getElementById('userInfo').style.display = 'flex';
+            document.getElementById('userName').textContent = currentUser.username;
+            document.getElementById('userRole').textContent = currentUser.role === 'admin' ? 'Администратор' : 'Пользователь';
+            document.getElementById('userAvatar').textContent = currentUser.username.charAt(0).toUpperCase();
+        }
+
+        // Модальные окна
+        function showLogin() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        function showRegister() {
+            document.getElementById('registerModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+
+        // Авторизация
+        function performLogin() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const user = users.find(u => u.username === username && u.password === password);
+            
+            if (user) {
+                currentUser = user;
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                showUserMenu();
+                closeModal();
+                
+                if (user.role === 'admin') {
+                    document.getElementById('adminPanel').style.display = 'block';
+                    loadReceipts();
+                    loadUsers();
+                }
+                
+                showNotification('Успешный вход в систему!', 'success');
+            } else {
+                showNotification('Неверный логин или пароль', 'error');
+            }
+        }
+
+        // Регистрация
+        function performRegister() {
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirm = document.getElementById('registerConfirm').value;
+
+            if (!username || !password) {
+                showNotification('Заполните все поля', 'error');
+                return;
+            }
+
+            if (password !== confirm) {
+                showNotification('Пароли не совпадают', 'error');
+                return;
+            }
+
+            if (users.find(u => u.username === username)) {
+                showNotification('Пользователь уже существует', 'error');
+                return;
+            }
+
+            const newUser = {
+                username,
+                password,
+                email: '',
+                role: 'user',
+                createdAt: new Date().toISOString(),
+                purchases: 0
+            };
+
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            showNotification('Регистрация успешна!', 'success');
+            closeModal();
+        }
+
+        // Выход
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            document.getElementById('authButtons').style.display = 'flex';
+            document.getElementById('userInfo').style.display = 'none';
+            document.getElementById('adminPanel').style.display = 'none';
+            showNotification('Вы вышли из системы', 'success');
+        }
+
+        // Покупка аккаунта
+        function buyAccount(country, type, price) {
+            if (!currentUser) {
+                showNotification('Для покупки необходимо войти в систему', 'warning');
+                showLogin();
+                return;
+            }
+
+            const prices = JSON.parse(localStorage.getItem('prices') || '{}');
+            let actualPrice = price;
+            
+            // Получаем актуальную цену из localStorage
+            switch(country) {
+                case 'USA':
+                case 'США':
+                    actualPrice = type === 'ОТЛЕГА' ? prices['usa-ot'] : prices.usa;
+                    break;
+                case 'Индия':
+                    actualPrice = type === 'ОТЛЕГА' ? prices['india-ot'] : prices.india;
+                    break;
+                case 'Россия':
+                    actualPrice = prices.russia;
+                    break;
+                case 'Казахстан':
+                    actualPrice = prices.kazakhstan;
+                    break;
+            }
+
+            currentPurchase = {
+                id: Date.now(),
+                country,
+                type,
+                price: actualPrice,
+                user: currentUser.username,
+                status: 'pending',
+                date: new Date().toLocaleString(),
+                timestamp: Date.now()
+            };
+
+            document.getElementById('paymentAmount').textContent = actualPrice + '₽';
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        // Загрузка чека
+        function uploadReceipt(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('uploadArea').innerHTML = `
+                        <div class="upload-icon">✅</div>
+                        <div style="font-size: 18px; color: var(--dark); margin-bottom: 10px;">${file.name}</div>
+                        <div style="color: var(--success); font-size: 14px;">Файл успешно загружен</div>
+                    `;
+                    document.getElementById('uploadArea').style.background = 'rgba(16, 185, 129, 0.1)';
+                    document.getElementById('uploadArea').style.borderColor = 'var(--success)';
+                    document.getElementById('submitPaymentBtn').disabled = false;
+                    
+                    currentPurchase.receipt = e.target.result;
+                    currentPurchase.receiptName = file.name;
+                    currentPurchase.fileType = file.type;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Подтверждение оплаты
+        function submitPayment() {
+            if (!currentPurchase.receipt) {
+                showNotification('Пожалуйста, загрузите чек', 'error');
+                return;
+            }
+
+            receipts.push(currentPurchase);
+            localStorage.setItem('receipts', JSON.stringify(receipts));
+
+            // Обновляем статистику пользователя
+            const userIndex = users.findIndex(u => u.username === currentUser.username);
+            if (userIndex !== -1) {
+                users[userIndex].purchases = (users[userIndex].purchases || 0) + 1;
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+
+            showNotification('Чек отправлен на проверку! Ожидайте подтверждения.', 'success');
+            closeModal();
+            
+            updateStatistics();
+            
+            if (currentUser.role === 'admin') {
+                loadReceipts();
+            }
+        }
+
+        // Админ: Переключение вкладок
+        function switchTab(tabName) {
+            // Скрыть все вкладки
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Убрать активный класс со всех кнопок
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Показать выбранную вкладку
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+            
+            // Добавить активный класс кнопке
+            event.target.classList.add('active');
+            
+            // Обновить данные если нужно
+            if (tabName === 'receipts') {
+                loadReceipts();
+            } else if (tabName === 'users') {
+                loadUsers();
+            }
+        }
+
+        // Админ: Загрузка чеков
+        function loadReceipts() {
+            const receiptsList = document.getElementById('receiptsList');
+            receiptsList.innerHTML = '';
+
+            const pendingReceipts = receipts.filter(r => r.status === 'pending');
+            const approvedReceipts = receipts.filter(r => r.status === 'approved');
+            const rejectedReceipts = receipts.filter(r => r.status === 'rejected');
+
+            if (receipts.length === 0) {
+                receiptsList.innerHTML = '<p style="text-align: center; color: var(--gray); padding: 40px;">Нет чеков для отображения</p>';
+                return;
+            }
+
+            // Показываем все чеки
+            [...pendingReceipts, ...approvedReceipts, ...rejectedReceipts].forEach(receipt => {
+                const item = document.createElement('div');
+                item.className = `receipt-card ${receipt.status}`;
+                
+                let statusBadge = '';
+                let actions = '';
+                
+                if (receipt.status === 'pending') {
+                    statusBadge = '<span style="color: var(--warning); font-weight: 600;">⏳ Ожидает</span>';
+                    actions = `
+                        <button class="btn btn-success" onclick="processReceipt(${receipt.id}, 'approved')" style="padding: 8px 15px;">
+                            ✓ Одобрить
+                        </button>
+                        <button class="btn btn-danger" onclick="processReceipt(${receipt.id}, 'rejected')" style="padding: 8px 15px;">
+                            ✗ Отклонить
+                        </button>
+                    `;
+                } else if (receipt.status === 'approved') {
+                    statusBadge = '<span style="color: var(--success); font-weight: 600;">✅ Одобрен</span>';
+                } else {
+                    statusBadge = '<span style="color: var(--danger); font-weight: 600;">❌ Отклонен</span>';
+                }
+                
+                item.innerHTML = `
+                    <div class="receipt-info">
+                        <div class="receipt-user">${receipt.user}</div>
+                        <div class="receipt-details">
+                            ${receipt.country} - ${receipt.type} | ${receipt.price}₽
+                            <br>
+                            <small>${receipt.date}</small>
+                            <br>
+                            ${statusBadge}
+                        </div>
+                    </div>
+                    <div class="receipt-actions">
+                        ${actions}
+                    </div>
+                `;
+                receiptsList.appendChild(item);
+            });
+        }
+
+        // Админ: Обработка чека
+        function processReceipt(receiptId, action) {
+            const receiptIndex = receipts.findIndex(r => r.id === receiptId);
+            if (receiptIndex !== -1) {
+                receipts[receiptIndex].status = action;
+                receipts[receiptIndex].processedBy = currentUser.username;
+                receipts[receiptIndex].processedAt = new Date().toLocaleString();
+                
+                localStorage.setItem('receipts', JSON.stringify(receipts));
+                
+                showNotification(`Чек ${action === 'approved' ? 'одобрен' : 'отклонен'}`, 'success');
+                loadReceipts();
+                updateStatistics();
+            }
+        }
+
+        // Админ: Загрузка пользователей
+        function loadUsers() {
+            const usersList = document.getElementById('usersList');
+            usersList.innerHTML = '';
+
+            users.forEach(user => {
+                const userReceipts = receipts.filter(r => r.user === user.username);
+                const approvedReceipts = userReceipts.filter(r => r.status === 'approved');
+                
+                const item = document.createElement('div');
+                item.className = 'receipt-card';
+                item.innerHTML = `
+                    <div class="receipt-info">
+                        <div class="receipt-user">
+                            ${user.username} 
+                            <span style="font-size: 12px; color: ${user.role === 'admin' ? 'var(--danger)' : 'var(--primary)'};">
+                                [${user.role === 'admin' ? 'Админ' : 'Пользователь'}]
+                            </span>
+                        </div>
+                        <div class="receipt-details">
+                            Регистрация: ${new Date(user.createdAt).toLocaleDateString()}
+                            <br>
+                            Покупок: ${approvedReceipts.length}
+                            <br>
+                            Потрачено: ${approvedReceipts.reduce((sum, r) => sum + parseInt(r.price), 0)}₽
+                        </div>
+                    </div>
+                    <div class="receipt-actions">
+                        <button class="btn ${user.role === 'admin' ? 'btn-danger' : 'btn-success'}" 
+                                onclick="toggleUserRole('${user.username}')" style="padding: 8px 15px;">
+                            ${user.role === 'admin' ? 'Убрать админку' : 'Сделать админом'}
+                        </button>
+                    </div>
+                `;
+                usersList.appendChild(item);
+            });
+        }
+
+        // Админ: Изменение роли пользователя
+        function toggleUserRole(username) {
+            const userIndex = users.findIndex(u => u.username === username);
+            if (userIndex !== -1) {
+                users[userIndex].role = users[userIndex].role === 'admin' ? 'user' : 'admin';
+                localStorage.setItem('users', JSON.stringify(users));
+                showNotification(`Роль пользователя ${username} изменена`, 'success');
+                loadUsers();
+            }
+        }
+
+        // Админ: Обновление цен
+        function updatePrice(type, value) {
+            const prices = JSON.parse(localStorage.getItem('prices') || '{}');
+            prices[type] = parseInt(value);
+            localStorage.setItem('prices', JSON.stringify(prices));
+            
+            updatePriceDisplay();
+            showNotification(`Цена обновлена`, 'success');
+        }
+
+        // Закрытие модальных окон при клике вне их
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal();
+            }
+        };
+
+        // Автозакрытие модальных окон по ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
